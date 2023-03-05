@@ -6,7 +6,7 @@ vbind:id => :id  這是簡寫
     <h2>可以換圖片！！！！！！</h2>
     <div class="container">
         <div class="border" @click="change" title="可以換圖片喔">
-            <img :src="`./img/${imgSrc}`" alt="XXX">
+            <img :src="pictureImg" alt="XXX">
         </div>
     </div>
 
@@ -40,21 +40,25 @@ vbind:id => :id  這是簡寫
 export default {
     data() {
         return {
-            imgSrc: "cat.432efc1f.jpg",
+            imgSrc: "cat.jpg",
             msg: "",
             fontColor: "black"
         }
     },
     methods: {
         change() {
-        if(this.imgSrc === "dog.0b6c2e07.jpg") this.imgSrc = "cat.432efc1f.jpg"
-        else this.imgSrc = "dog.0b6c2e07.jpg"
+        if(this.imgSrc === "dog.jpg") this.imgSrc = "cat.jpg"
+        else this.imgSrc = "dog.jpg"
         }
     },
     computed: {
         isValide() {
             return this.msg.length > 10
-        }
+        },
+        pictureImg() {
+            // 為了要抓到圖片的相對路徑
+            return require("../assets/" + this.imgSrc)
+        } 
     }
 
 }
