@@ -1,30 +1,44 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <h2>Select Example</h2>
+  <select v-model="whichComponent" style="margin-bottom: 50px">
+    <option>MyData</option>
+    <option>OnEvent</option>
+    <option>FormControl</option>
+    <option>MethodComputed</option>
+    <option>BindStyle</option>
+  </select>
+
+  <div class="border">
+    <component :is="whichComponent"></component>
+  </div>
+
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import MyData from "./components/my-data.vue"
+import FormControl from "./components/form-control.vue"
+import MethodComputed from "./components/method-computed.vue"
+import OnEvent from "./components/on-event.vue"
+import BindStyle from "./components/bind-style.vue"
 
-nav {
-  padding: 30px;
+export default {
+  data() {
+    return {
+      whichComponent: "MyData"
+    }
+  },
+  components: {
+    MyData, FormControl, MethodComputed, OnEvent, BindStyle
+  }
 }
+</script>
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
+<style scoped>
+  .border {
+    width: 100vw;
+    background-color: white;
+    border-radius: 3px;
+    padding: 20px;
+    border: 1px solid #a1a1a1;
+  }
 </style>
