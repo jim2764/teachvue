@@ -57,6 +57,7 @@ export default {
             console.log("Method")
             return this.price * this.quantity;
         },
+        // 將input的value加進array當中
         addNumber() {
             this.numbers.push(Number(this.tmp));
             this.tmp = 0

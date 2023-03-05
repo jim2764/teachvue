@@ -7,6 +7,7 @@
     <option>MethodComputed</option>
     <option>BindStyle</option>
     <option>MyCondition</option>
+    <option>MyParent</option>
   </select>
 
   <div class="border">
@@ -22,6 +23,7 @@ import MethodComputed from "./components/method-computed.vue"
 import OnEvent from "./components/on-event.vue"
 import BindStyle from "./components/bind-style.vue"
 import MyCondition from "./components/my-condition.vue"
+import MyParent from "./components/props-emit/my-parent.vue"
 
 export default {
   data() {
@@ -30,7 +32,7 @@ export default {
     }
   },
   components: {
-    MyData, FormControl, MethodComputed, OnEvent, BindStyle, MyCondition
+    MyData, FormControl, MethodComputed, OnEvent, BindStyle, MyCondition, MyParent
   }
 }
 </script>
