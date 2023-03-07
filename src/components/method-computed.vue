@@ -30,7 +30,7 @@ method:
   <!-- 動態將number加進array當中, computed的值也會跟著改變 -->
   <div>
     <div>
-        <input type="text" v-model="tmp">
+        <input type="number" v-model="tmp">
         <button @click="addNumber">Add to Array</button>
     </div>
 
@@ -53,6 +53,9 @@ export default {
         }
     },
     methods: {
+        print(val) {
+            console.log(val)
+        },
         methodCal() {
             console.log("Method")
             return this.price * this.quantity;

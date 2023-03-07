@@ -13,7 +13,7 @@ props in, event out
     <p>請輸入介於1 ~ 10之間</p>
 
     <div style="display:flex">
-        <input type="number" :value="parentId" @input="parentId = $event.target.value" style="margin-right:15px">
+        <input type="number" v-model="parentId" style="margin-right:15px">
         <div class="error" v-show="isDisplay">X</div>
     </div>
     
@@ -22,7 +22,7 @@ props in, event out
     <p>Parent Id: {{ parentId }}</p>
 
     <div class="border">
-        <MyChild :childId="parentId" @update="getName"></MyChild>
+        <MyChild :childId="parentId"  @update="getName"></MyChild>
     </div>
 
 </template>

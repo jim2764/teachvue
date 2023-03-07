@@ -22,8 +22,8 @@
     <input type="radio" id="basketball" value="basketball" v-model="radioMsg">
     <label for="basketball">Basketball</label>
 
-    <input type="radio" id="baseball" value="baseball" v-model="radioMsg">
-    <label for="baseball">Baseball</label>
+    <input type="radio" value="baseball" v-model="radioMsg">
+    <label>Baseball</label>
 
 
     <p>Show: {{ radioMsg }}</p>
@@ -62,7 +62,7 @@
         <option>Kaohsiung</option>
     </select>
 
-    <p>Show: {{ selectMsg || "No Select" }}</p>
+    <p>Show: {{ selectMsg }}</p>
   </div>
 </template>
 

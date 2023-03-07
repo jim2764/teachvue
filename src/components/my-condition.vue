@@ -40,18 +40,43 @@ v-for時常搭配key, vue為了渲染的效率, 常常保留此標籤不更換, 
 
         <h2>single object</h2>
         <div class="dflex">
-            <p v-for="(item, index) in objData" :key="index" style="margin-right: 20px">{{ item }}</p>
+            <p v-for="(item, aaa , key) in objData" :key="aaa" style="margin-right: 20px">{{ item }} / {{ aaa }} {{ key }}</p>
         </div>
-
+        <!-- objData: {
+                id: "m0001",
+                name: "阿魚",
+                address: "新北市"
+            }, -->
         <h2>multiple object</h2>
-        <div class="dflexmargin" v-for="item in multiObjData" :key="item">
+        <div class="dflexmargin" v-for="item in multiObjData" :key="item.id">
             <p>Id: {{ item.id }}</p>
             <p>Name: {{ item.name }}</p>
             <p>Address: {{ item.address }}</p>
             <div style="width: 500px"></div>
         </div>
     </div>
-
+    <!-- multiObjData: [
+                {
+                    id: "m0001",
+                    name: "阿魚",
+                    address: "新北市"
+                },
+                {
+                    id: "m0002",
+                    name: "佳佳",
+                    address: "基隆市",
+                },
+                {
+                    id: "m0003",
+                    name: "米花",
+                    address: "基隆市"
+                },
+                {
+                    id: "m0004",
+                    name: "小黑",
+                    address: "桃園市"
+                }
+            ] -->
 </template>
 
 <script>

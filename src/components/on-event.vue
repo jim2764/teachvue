@@ -9,14 +9,14 @@ EX: v-on:click
 <template>
   <h1>Event</h1>
   <div>
-    <button v-on:click="addCount">Count: {{ count }}</button>
+    <button id="count" v-on:click="adzzdCount">Count: {{ count }}</button>
   </div>
 
     <hr>
 
   <div>
     <input type="text" v-model="number">
-    <button @click="show()">Alert</button>
+    <button @click="show">Alert</button>
   </div>
 
 </template>

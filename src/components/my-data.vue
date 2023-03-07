@@ -15,7 +15,8 @@ export default {
             price: 200,
             quantity: 5
         }
-    }
+    },
+
 }
 </script>
 

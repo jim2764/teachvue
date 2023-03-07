@@ -18,7 +18,7 @@ import axios from "axios"
 
 export default {
     name: "MyChild",
-    props: ["childId"],
+    props: ["childId",],
     emits: ["update"],
     data() {
         return {

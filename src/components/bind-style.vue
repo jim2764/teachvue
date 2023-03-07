@@ -6,7 +6,7 @@ vbind:id => :id  這是簡寫
     <h2>可以換圖片！！！！！！</h2>
     <div class="container">
         <div class="border" @click="change" title="可以換圖片喔">
-            <img :src="pictureImg" alt="XXX">
+            <img v-bind:src="pictureImg" alt="XXX">
         </div>
     </div>
 
@@ -14,8 +14,8 @@ vbind:id => :id  這是簡寫
 
     <div>
         <h2>請勿超過10個字</h2>
-        <label for="type">Type: </label>
-        <input type="text" id="type" v-model="msg" v-bind:class="{error: isValide}">
+        <label for="type" class="border">Type: </label>
+        <input type="text" id="type" v-model="msg" v-bind:class="{border:true}">
         <!-- :class="{}" 裡面放的class為true的時候, 標籤就會被套上class樣式 -->
         <!-- <input type="text" id="type" v-model="msg" v-bind:class="{error: msg.length > 10}"> -->
     </div>
@@ -47,8 +47,12 @@ export default {
     },
     methods: {
         change() {
-        if(this.imgSrc === "dog.jpg") this.imgSrc = "cat.jpg"
-        else this.imgSrc = "dog.jpg"
+        if(this.imgSrc === "dog.jpg") {
+            this.imgSrc = "cat.jpg"
+        }
+        else {
+            this.imgSrc = "dog.jpg"
+        }
         }
     },
     computed: {
@@ -65,6 +69,7 @@ export default {
 </script>
 
 <style scoped>
+
     .error {
         border: red solid 1px;
         color: red
